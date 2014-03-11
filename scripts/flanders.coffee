@@ -22,5 +22,5 @@ responses = [
   "http://www.youtube.com/watch?v=qKIrADhZc8k"
 ]
 module.exports = (robot) ->
-  robot.hear /flanders/i, (msg) ->
+  robot.hear /flanders|Hi-dilly-ho|neighborino/i, (msg) ->
     msg.send msg.random responses
