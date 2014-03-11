@@ -17,7 +17,9 @@ responses = [
   "http://i.imgur.com/jMdue1f.png",
   "http://i.imgur.com/swGU7i0.gif",
   "http://i.imgur.com/O581CS3.png",
-  "http://i.imgur.com/rOHSTVB.gif"
+  "http://i.imgur.com/rOHSTVB.gif",
+  "http://www.youtube.com/watch?v=LkGUGmhHX-0",
+  "http://www.youtube.com/watch?v=qKIrADhZc8k"
 ]
 module.exports = (robot) ->
   robot.hear /flanders/i, (msg) ->
