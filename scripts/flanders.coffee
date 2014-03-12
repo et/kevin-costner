@@ -19,7 +19,12 @@ responses = [
   "http://i.imgur.com/O581CS3.png",
   "http://i.imgur.com/rOHSTVB.gif",
   "http://www.youtube.com/watch?v=LkGUGmhHX-0",
-  "http://www.youtube.com/watch?v=qKIrADhZc8k"
+  "http://www.youtube.com/watch?v=qKIrADhZc8k",
+  "http://media.giphy.com/media/a9A4vGvPpmREY/giphy.gif",
+  "http://24.media.tumblr.com/tumblr_m7nqkn9Ly11rxlru1o1_500.jpg",
+  "http://img1.wikia.nocookie.net/__cb20100419011935/simpsons/images/1/15/NedFlanders3.gif",
+  "http://media-cache-ec0.pinimg.com/236x/49/59/50/49595096b2cdb6404942f64f9d334065.jpg",
+  "http://global3.memecdn.com/oh-flanders_o_1946705.jpg"
 ]
 module.exports = (robot) ->
   robot.hear /flanders|Hi-dilly-ho|neighborino/i, (msg) ->
