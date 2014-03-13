@@ -27,5 +27,5 @@ responses = [
   "http://global3.memecdn.com/oh-flanders_o_1946705.jpg"
 ]
 module.exports = (robot) ->
-  robot.hear /flanders|Hi-dilly-ho|neighborino/i, (msg) ->
+  robot.hear /flanders|Hi-dilly-ho|neighborino|okely dokely/i, (msg) ->
     msg.send msg.random responses
