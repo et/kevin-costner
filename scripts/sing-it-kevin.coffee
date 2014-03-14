@@ -16,5 +16,5 @@ responses = [
   'http://www.youtube.com/watch?v=LtUWwB836lQ'
 ]
 module.exports = (robot) ->
-  robot.hear /sing/i, (msg) ->
+  robot.hear /sing it kevin/i, (msg) ->
     msg.send msg.random responses
