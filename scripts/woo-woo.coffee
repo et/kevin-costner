@@ -8,5 +8,5 @@ responses = [
   "http://i.imgur.com/yrp8b.gif"
 ]
 module.exports = (robot) ->
-  robot.hear /\bwoo\b|\bwhoo\b|pain train/i, (msg) ->
+  robot.hear /\bwoo+\b|pain train/i, (msg) ->
     msg.send msg.random responses
