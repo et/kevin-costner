@@ -3,6 +3,7 @@
 #
 # Commands:
 #   flanders - Reply with flanders
+#
 
 responses = [
   "http://i.imgur.com/dT1QnII.gif",
