@@ -12,18 +12,6 @@
 #   hubot sprint list tasks - List the sprints
 #   hubot sprint delete <task number> - Delete a sprint
 
-rsvp = require 'rsvp'
-
-class Imdb
-  constructor: (@robot) ->
-
-  search: (id) ->
-    promise = new rsvp.Promise
-    @robot.http("http://www.omdbapi.com/?i=tt0099348&t=").get() (err, res, body) ->
-      promise.resolve JSON.parse(body)
-    promise
-
-
 class Sprints
   constructor: (@robot) ->
     @cache = []
@@ -37,10 +25,10 @@ class Sprints
     maxSprintNum
 
   add: (sprintStr) ->
-    sprint = {num: @nextNum(), sprint: sprintStr}
-    @cache.push sprint
+    task = {num: @nextNum(), sprint: sprintStr}
+    @cache.push task
     @robot.brain.data.sprints = @cache
-    sprint
+    task
 
   all: -> @cache
 
@@ -53,15 +41,6 @@ class Sprints
 
 module.exports = (robot) ->
   sprints = new Sprints robot
-  imdb = new Imdb robot
-
-  robot.respond /(search for) (tt\d{7})$/i, (msg) ->
-    id = msg.match[2]
-    msg.send "Searching for #{id}"
-    movie = imdb.search id
-    msg.send movie
-    msg.send JSON.stringify(movie)
-
 
   robot.respond /(sprint add|add sprint) (.+?)$/i, (msg) ->
     sprint = sprints.add msg.match[2]
