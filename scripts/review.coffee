@@ -12,5 +12,5 @@ responses = [
   "I'd get a second opinion"
 ]
 module.exports = (robot) ->
-  robot.respond /review/i, (msg) ->
+  robot.respond /please review|review/i, (msg) ->
     msg.send msg.random responses
