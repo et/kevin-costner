@@ -26,7 +26,7 @@ module.exports = (robot) ->
             urls.push(child.data.url)
 
         if urls.count <= 0
-          msg.send "Couldn't find anything rad..."
+          msg.send "Couldn't find anything tasty..."
           return
 
         rnd = Math.floor(Math.random()*urls.length)
