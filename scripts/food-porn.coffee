@@ -16,7 +16,7 @@ url = require("url")
 module.exports = (robot) ->
   robot.respond /food me/i, (msg) ->
     search = escape(msg.match[1])
-    msg.http('http://www.reddit.com/r/FordPorn.json')
+    msg.http('http://www.reddit.com/r/FoodPorn.json')
       .get() (err, res, body) ->
         result = JSON.parse(body)
 
