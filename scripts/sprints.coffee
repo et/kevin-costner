@@ -8,7 +8,7 @@
 #   None
 #
 # Commands:
-#   hubot sprints - List all sprints
+#   hubot list sprints - List all sprints
 #   hubot add sprint Thing - Add a sprint named 'Thing'
 #   hubot delete sprint Thing - Remove a sprint named "Thing"
 #
@@ -42,7 +42,7 @@ module.exports = (robot) ->
     else
       msg.send 'I couldn\'t find that sprint.'
 
-  robot.respond /sprints/i, (msg) ->
+  robot.respond /list sprints/i, (msg) ->
     robot.brain.data.sprints ?= []
 
     if robot.brain.data.sprints.length > 0
@@ -50,7 +50,7 @@ module.exports = (robot) ->
         name = sprint.name
         name
 
-      msg.send "Sprints:\n" + sprints.join "\n"
+      msg.send "Sprints:" + sprints.join "\n"
 
     else
       msg.send "I'm not currently tracking any sprints. Why don't you add one?"
