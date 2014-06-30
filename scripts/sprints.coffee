@@ -50,7 +50,7 @@ module.exports = (robot) ->
         name = sprint.name
         name
 
-      msg.send "Sprints:\n\n" + sprints.join "\n"
+      msg.send "Sprints:\n" + sprints.join "\n"
 
     else
       msg.send "I'm not currently tracking any sprints. Why don't you add one?"
