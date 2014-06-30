@@ -10,7 +10,8 @@ responses = [
   "http://i.imgur.com/SiuR4Ge.gif",
   "http://i.imgur.com/cR8gJ6z.gif",
   "http://i.imgur.com/6eUluFE.gif",
-  "http://i.imgur.com/jVyohs1.gif"
+  "http://i.imgur.com/jVyohs1.gif",
+  "http://media.giphy.com/media/23yGgOo9TQVqw/giphy.gif"
 ]
 module.exports = (robot) ->
   robot.hear /magic/i, (msg) ->
