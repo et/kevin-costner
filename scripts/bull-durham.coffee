@@ -5,7 +5,7 @@
 #   !kyle - Reply with kyle
 
 responses = [
-  "https://s3.amazonaws.com/uploads.hipchat.com/45727/306033/D6SQIZKD7rsl5ut/output1.gif"
+  "http://www.okmoviequotes.com/wp-content/uploads/2014/06/101-Bull-Durham-quotes.gif"
 ]
 module.exports = (robot) ->
   robot.hear /bull durham/i, (msg) ->
