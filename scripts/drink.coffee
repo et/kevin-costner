@@ -34,6 +34,9 @@ getMeADrinkBeeyotch = (msg, subreddit, drink) ->
       msg.send picked_url
 
 module.exports = (robot) ->
+  robot.respond /list drinks/i, (msg) ->
+    msg.send "I've got beer, coffee, cider, water, latte, wine, and orange drink"
+
   robot.respond /(beer|coffee|cider|water|latte|wine|orange drink) (@\w+)/i, (msg) ->
     drink = msg.match[1]
     recipient = msg.match[2]
