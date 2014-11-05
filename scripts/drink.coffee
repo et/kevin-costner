@@ -7,6 +7,19 @@
 
 url = require("url")
 
+smoothies = [
+  "http://itzlinz.com/wp-content/uploads/2013/02/smoothie.jpg",
+  "http://media-cache-ak0.pinimg.com/236x/c1/e3/96/c1e396f529237f56ef1eaed9afe9114d.jpg",
+  "http://bestbuysmoothiemaker.com/wp-content/uploads/2010/11/smoothie-with-fruits.jpg",
+  "http://s2.djyimg.com/n3/eet-content/uploads/2014/04/shutterstock_102354544-676x450.jpg"
+]
+
+lattes = [
+  "https://milklife.com/sites/default/files/styles/original/public/main_image/Recipe/2013/09/18/Protein-Packed%20Latte_square.jpg",
+  "http://b-i.forbesimg.com/robertpassikoff/files/2013/09/latte.jpg",
+  "http://cdn2.thatsnerdalicious.com/wp-content/uploads/2011/12/mario-latte-art.jpg",
+]
+
 getMeADrinkBeeyotch = (msg, subreddit, drink) ->
   msg.http("http://www.reddit.com/r/#{subreddit}.json")
     .get() (err, res, body) ->
@@ -35,9 +48,9 @@ getMeADrinkBeeyotch = (msg, subreddit, drink) ->
 
 module.exports = (robot) ->
   robot.respond /list drinks/i, (msg) ->
-    msg.send "I've got beer, coffee, cider, water, latte, wine, and orange drink"
+    msg.send "I've got beer, coffee, cider, water, latte, wine, whey smoothie, and orange drink"
 
-  robot.respond /(beer|coffee|cider|water|latte|wine|orange drink) (@\w+)/i, (msg) ->
+  robot.respond /(beer|coffee|cider|water|latte|wine|whey smoothie|orange drink) (@\w+)/i, (msg) ->
     drink = msg.match[1]
     recipient = msg.match[2]
     msg.send "Sending a #{drink} to #{recipient}"
@@ -61,4 +74,6 @@ module.exports = (robot) ->
          when 'orange drink'
            msg.send "http://i.imgur.com/OC4sh1n.jpg"
          when 'latte'
-           msg.send "http://1.bp.blogspot.com/-MlSFVxK6yxU/Uk79uChpImI/AAAAAAAAAJ8/wmnZL9uTFZU/s1600/Alice1.jpg"
+           msg.send msg.random lattes
+         when 'whey smoothie'
+           msg.send msg.random smoothies
